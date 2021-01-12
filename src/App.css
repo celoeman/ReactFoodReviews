@@ -1,0 +1,506 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.App {
+  /* background-color: #282c34; */
+  /* background-color: rgba(240,240,255,1); */
+  background: green;
+  max-height: 100vh;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 0;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: none;
+  border-left: 1px solid rgba(12,12,11,1);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(12,12,11,1);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  /* background: #555; */
+}
+
+/********** Header **********/
+
+.App-header {
+  height: 50px;
+  /* background: rgba(100,100,200,1); */
+  background: rgba(50,94,168,1);
+  /* box-shadow: 0 5px 5px rgba(20,20,50,1); */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position: relative;
+  z-index: 1000;
+}
+
+#title {
+  height: 50px;
+  width: 50%;
+  margin-left: 10%;
+  position: relative;
+  overflow: hidden;
+}
+
+.pizzaIcon {
+  position: relative;
+  height: 50px;
+  width: 40px;
+  top: 0;
+  left: 0;
+  color: orange;
+  font-size: 2em;
+  display: inline-block;
+}
+
+h1 {
+  font-weight: 300;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  width: calc(100% - 50px);
+  height: 100%;
+  color: white;
+  padding: 5px;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#search {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  position: absolute;
+  height: 30px;
+  width: 300px;
+  margin: 10px;
+  top: 0;
+  right: 0;
+  outline: none;
+  padding-left: 10px;
+  border-radius: 5px;
+  border: none;
+  /* background: rgba(200,200,250,1); */
+  background: rgba(255, 235, 173,1);
+  transition: background .5s, box-shadow .5s;
+}
+
+#search:focus {
+  box-shadow: 2px 2px 2px rgba(20,20,50,1);
+  background: white;
+  transition: background .5s, box-shadow .5s;
+}
+
+/********** Add Item **********/
+
+
+#addItem {
+  width: 75px;
+  height: 75px;
+  border-radius: 75px;
+  /* background: rgba(100,100,200,1); */
+  background: orange;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background .5s;
+  z-index: 100;
+  box-shadow: 0 5px 5px rgba(20,20,50,1);
+  transition: box-shadow 1s;
+}
+
+#addItem_main {
+  width: 75px;
+  height: 75px;
+  border-radius: 75px;
+  /* background: rgba(240,240,255,1); */
+  background: white;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background .5s;
+  z-index: 99;
+  box-shadow: 0 5px 5px rgba(20,20,50,1);
+  transition: width 1s, height 1s, borderRadius 1s;
+  overflow: hidden;
+}
+
+#pickForm {
+  height: 40px;
+  background: orange;
+  border-radius: 20px 20px 0 0;
+  position: relative;
+}
+
+#pickFormLeft {
+  height: 100%;
+  width: 60%;
+  position: absolute;
+  left: 0;
+  border-radius: 20px 0 0 0;
+  /* border: 1px solid red; */
+  text-align: center;
+  padding: 5px;
+  background: rgb(255, 204, 110);
+  cursor: pointer;
+}
+
+#pickFormRight {
+  height: 100%;
+  width: 40%;
+  position: absolute;
+  right: 0;
+  border-radius: 0 20px 0 0;
+  /* border: 1px solid red; */
+  text-align: center;
+  padding: 5px;
+  background: rgb(209, 135, 0, 1);
+  cursor: pointer;
+}
+
+#addItem_formLeft {
+  /* border: 1px solid red; */
+  height: calc(100% - 40px);
+  width: 100%;
+  border-radius: 0 0 75px 20px;
+  display: block;
+  background: rgb(255, 204, 110);
+  padding-top: 20px;
+}
+
+#addItem_formRight {
+  /* border: 1px solid red; */
+  height: calc(100% - 40px);
+  width: 100%;
+  border-radius: 0 0 75px 20px;
+  display: none;
+  background: rgb(255, 204, 110);
+  padding-top: 20px;
+}
+
+#restaurant, #rating, #city, #state, #description, #leftSubmit {
+  display: block;
+  width: 90%;
+  margin: auto;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  background: rgb(255, 233, 194);
+}
+
+#restaurant:focus, #rating:focus, #city:focus, #state:focus, #description:focus, #leftSubmit:focus {
+  background: rgb(255, 245, 227);
+}
+
+#revRestaurantSelected, #revRestaurant, #rightSubmit {
+  display: block;
+  width: 90%;
+  margin: auto;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  background: rgb(255, 233, 194);
+}
+
+#revRestaurantSelected:focus, #revRestaurant:focus, #rightSubmit:focus {
+  background: rgb(255, 245, 227);
+}
+
+#leftSubmit, #rightSubmit {
+  box-shadow: none;
+  transition: box-shadow .5s;
+}
+
+#leftSubmit:hover, #rightSubmit:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  cursor: pointer;
+  transition: box-shadow .5s;
+}
+
+.plusIcon {
+  font-size: 3em;
+  color: white;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: color .5s;
+  -webkit-transition: -webkit-transform 1s ease-out;
+  -moz-transition:    -moz-transform 1s ease-out;
+  -o-transition:      -o-transform 1s ease-out;
+  -ms-transition:     -ms-transform 1s ease-out;
+  transition:         transform 1s ease-out;
+}
+
+#addItem:hover {
+  background: rgba(200,200,250,1);
+  cursor: pointer;
+  transition: background .5s;
+  box-shadow: 0 7px 7px rgba(20,20,50,1);
+  transition: box-shadow 1s;
+}
+
+#addItem:hover .plusIcon {
+  /* color: rgba(100,100,200,1); */
+  color: rgba(50,94,168,1);
+  cursor: pointer;
+  transition: color .5s;
+}
+
+/********** Body **********/
+
+#main {
+  width: 100%;
+  height: calc(100% - 50px);
+  /* height: 100%; */
+  background: red;
+  position: absolute;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: 100% auto;
+}
+
+#leftMain {
+  background: none;
+  height: 100%;
+  position: relative;
+}
+
+#rightMain {
+  /* background: rgba(100,100,200,1); */
+  background: rgba(50,94,168,1);
+  height: 100%;
+  display: "none";
+}
+
+/********** Restaurants **********/
+
+#restaurants_container {
+  width: 100%;
+  height: 100%;
+  background: rgba(230,230,230,1);
+  position: absolute;
+  overflow: auto;
+  direction: rtl; /* places scrollbar on left side of div, see #restaurants_main direction */
+  padding-top: 50px;
+  bottom: 0;
+}
+
+.restaurant_main {
+  width: 80%;
+  height: 100px;
+  /* background: rgba(200,200,250,1); */
+  background: white;
+  border-radius: 5px;
+  margin: 20px auto;
+  direction: ltr; /* places scrollbar on left side of div, see #restaurants_container direction */
+  /* box-shadow: 0 5px 5px rgba(20,20,50,1); */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position: relative;
+  transition: width .5s, height .5s, box-shadow .5s;
+}
+
+.restaurant_main:hover {
+  width: 81%;
+  height: 101px;
+  cursor: pointer;
+  border-radius: 6px;
+  box-shadow: 0 7px 7px 2px rgba(20,20,50,1);
+  transition: width .5s, height .5s, box-shadow .5s;
+}
+
+.restaurant_main:hover .restaurant_img {
+  height: 101px;
+  width: 151px;
+  background: gray;
+  border-radius: 5px 0 0 5px;
+  border: none;
+  display: block;
+  background-size: cover;
+}
+
+.restaurant_img {
+  height: 100px;
+  width: 150px;
+  background: gray;
+  border-radius: 5px 0 0 5px;
+  border: none;
+  display: block;
+  background-size: cover;
+}
+
+.restaurant_details {
+  position: absolute;
+  background: none;
+  width: calc(100% - 150px);
+  height: 100%;
+  top: 0;
+  right: 0;
+  border-radius: 0 5px 5px 0;
+}
+
+.restaurant_row1 {
+  width: 100%;
+  background: none;
+  height: 50%;
+  border-radius: 0 5px 0 0;
+  position: relative;
+  border-bottom: 2px ridge rgba(50,94,168,1);
+}
+
+.restaurant_row2 {
+  width: 100%;
+  background: none;
+  height: 50%;
+  border-radius: 0 0 5px 0;
+  position: relative;
+  bottom: 0;
+}
+
+.restaurant_title {
+  height: 100%;
+  width: calc(100% - 80px);
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  overflow: hidden;
+  letter-spacing: 3px;
+}
+
+.restaurant_rating {
+  height: 100%;
+  width: 80px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-radius: 0 5px 0 0;
+  text-align: center;
+  font-size: 2em;
+  border-left: 2px ridge rgba(50,94,168,1);
+  font-weight: bold;
+  background: rgba(50,94,168,1);
+  color: white;
+}
+
+.restaurant_location {
+  height: 100%;
+  width: 150px;
+}
+
+.restaurant_description {
+  height: 100%;
+  width: calc(100% - 150px);
+  position: absolute;
+  right: 0;
+  top: 0;
+  overflow: hidden;
+}
+
+/********** Reviews **********/
+
+.review_title {
+  font-size: 2em;
+  text-align: center;
+  color: white;
+  padding: 10px;
+  /* border-top: 5px solid white; */
+}
+
+.review_row1 {
+  height: 250px;
+  /* border: 1px solid green; */
+  position: relative;
+}
+
+.restaurant_img2 {
+  position: absolute;
+  width: 60%;
+  height: 100%;
+  left: 0;
+  /* border: 1px solid yellow; */
+  /* background: rgba(50,94,168,1); */
+  background: rgb(255, 233, 194);
+  /* border-radius: 5px; */
+  border: 5px solid rgb(255, 233, 194);
+}
+
+.side_image {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.review_details {
+  position: absolute;
+  width: 40%;
+  height: 100%;
+  right: 0;
+  /* border: 1px solid yellow; */
+  background: rgb(255, 233, 194);
+}
+
+.review_row2 {
+  width: 100%;
+  min-height: 50px;
+  /* border: 1px solid yellow; */
+  background: rgb(255, 233, 194);
+}
+
+.review_bubbles {
+  border: 1px solid gray;
+  /* background: rgba(240,240,240,1); */
+  background: white;
+  /* border-radius: 5px; */
+  padding: 5px;
+  margin: 5px;
+  width: calc(100% - 15px);
+  display: inline-block;
+}
+
+.review_output {
+  width: 90%;
+  min-height: 40px;
+  /* background: rgba(240,240,240,1); */
+  background: white;
+  border-radius: 40px;
+  padding: 20px;
+  margin: 30px auto;
+  position: relative;
+  z-index: 1;
+}
+
+.review_output::after {
+  content: "";
+  width: 30px;
+  height: 30px;
+  background: white;
+  display: block;
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  bottom: 0px;
+  /* transform: matrix(1, -0.5, 0, 1, 0, 0) rotate(180deg); */
+  transform: skewX(40deg) rotate(100deg);
+}
+
+/********** Media Queries **********/
+
+@media only screen and (max-width: 1000px) {
+  .restaurant_title {
+    font-size: 1em;
+    padding: 10px;
+  }
+}
