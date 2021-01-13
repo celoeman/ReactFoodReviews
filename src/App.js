@@ -1,8 +1,8 @@
 import './App.css';
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPizzaSlice } from '@fortawesome/free-solid-svg-icons';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faPizzaSlice } from '@fortawesome/free-solid-svg-icons'; // Pizza Icon in headers
+import { faPlus } from '@fortawesome/free-solid-svg-icons'; // Plus icon for forms (bottom right side of document);
 
 function App(props) {
   const [open, setOpen] = useState(false);
@@ -53,6 +53,9 @@ function App(props) {
     image: "simplypho.jpg"
     }
   ]);
+
+// AddItemOpen is for the button in the bottom right cornere - allows the forms to appear;
+
   function AddItemOpen(x) {
     if (x === false) {
       document.getElementById("addItem_main").style.width = "400px";
@@ -68,6 +71,9 @@ function App(props) {
       setOpen(false);
     }
   }
+
+// RightSideShow brings up the right column where restaurant reviews/info are listed;
+
   function rightSideShow(x, restaurant) {
     if (x === false && currentRestaurantOpen === "") {
       document.getElementById("main").style.gridTemplateColumns = "60% auto";
@@ -83,6 +89,9 @@ function App(props) {
       setCurrentRestaurantOpen(restaurant);
     }
   }
+
+// SwitchForm allows you to switch between add restaurant form, and add review form;
+
   function switchForm(x) {
     if (x == "left") {
       document.getElementById("pickFormLeft").style.width = "60%";
@@ -101,11 +110,15 @@ function App(props) {
     }
   }
 
+// This handleChange updates the value before it's added to the restaurant state;
+
   const handleChange = (e) => {
     setValue(prevState => {
       return { ...prevState, [e.target.id]: e.target.value}
     });
   }
+
+// This addRest adds a new restaurant to the restaurant state;
 
   const addRest = (x) => {
     const newRest = [...restaurant, x];
@@ -122,17 +135,8 @@ function App(props) {
     });
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  }
-
-  // const handleRevChange = (e, x) => {
-  //   if (x === 'rev') {
-  //     setReviewValue(e.target.value);
-  //   } else {
-  //     setRevRestaurant(e.target.value);
-  //   }
-  // }
+// a and b below correspost the the second form (Add Review / #addItem_formRight);
+// they update the reviewValue and revRestaurant before it's pushed (addReview) to the reviews array inside restaurants;
 
   const a = (e) => {
     setReviewValue(e.target.value);
@@ -141,6 +145,9 @@ function App(props) {
   const b = (e) => {
     setRevRestaurant(e.target.value);
   }
+
+// This adds a review to the restaurant, please note the functions a and b above for further context;
+// Adds a review to the review array inside restaurants;
 
   const addReview = (x) => {
     restaurant.map(x => {
@@ -154,6 +161,8 @@ function App(props) {
       }
     });
   }
+
+// JSX
 
   return (
 
