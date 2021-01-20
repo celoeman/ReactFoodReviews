@@ -6,7 +6,7 @@
 * [Setup](#setup)
 
 ## General info
-A restaurant review app. First react project so doesn't follow common standards/practices as much as I wanted.
+A restaurant review app. First react project so doesn't follow common standards/practices as much as I wanted. The project is rooted in one App component and isn't broken apart. Built with react Hooks.
 
 <!-- ![scheduler-react](scheduler-react.gif) -->
 <img src="scheduler-react.gif" width="100%" />

@@ -175,14 +175,6 @@ function App(props) {
           />
           <h1>Eman's Food Reviews</h1>
         </div>
-        <input
-          id="search"
-          type="text"
-          name="search"
-          placeholder="Lets Eat!"
-          autocomplete="off"
-        >
-        </input>
       </header>
       <div
         id="addItem"
