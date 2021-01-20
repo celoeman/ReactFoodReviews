@@ -6,10 +6,10 @@
 * [Setup](#setup)
 
 ## General info
-A restaurant review app. First react project so doesn't follow common standards/practices as much as I wanted. The project is rooted in one App component and isn't broken apart. Built with react Hooks.
+A restaurant review app. First react project so doesn't follow common standards/practices as much as I wanted. The project is rooted in one App component and isn't broken apart. Built with react Hooks, no API calls/back-end.
 
 <!-- ![scheduler-react](scheduler-react.gif) -->
-<img src="scheduler-react.gif" width="100%" />
+<img src="react-food-reviews.gif" width="100%" />
 
 ## Technologies
 Project is created with:
