@@ -13,6 +13,9 @@ A restaurant review app. First react project so doesn't follow common standards/
 
 ## Technologies
 Project is created with:
+* HTML5
+* CSS3
+* JavaScript
 * React : ^17.0.1
 * React-Dom: ^17.0.1
 * NPM: 6.14.4
